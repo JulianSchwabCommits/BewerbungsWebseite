@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume</title>
+    <script src="Lander.js"></script>
+    <link rel="stylesheet" href="Lander.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#work" class="nav-link active" data-section="work">Work</a></li>
+            <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            <li><a href="#play" class="nav-link" data-section="play">Play</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="work" class="section active">
+            <div class="title-container">
+                <h1 class="title">Hi. I'm Julian.<br>A Coder.</h1>
+                <p class="subtitle">Application Developer Apprentice at Swisscom.</p>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Web Development <span class="highlight">@Personal</span></h2>
+                    <div class="date">2021 - Present</div>
+                    <p>Creating responsive and modern web experiences</p>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h2>Python Games <span class="highlight">@Personal</span></h2>
+                    <div class="date">2022 - Present</div>
+                    <p>Collection of interactive Python games using Pygame</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pygame</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Game Development <span class="highlight">@Personal</span></h2>
+                    <div class="date">2023 - 2024</div>
+                    <p>Creating immersive 3D experiences with Unreal Engine 5</p>
+                    <div class="skill-tags">
+                        <span class="tag">Unreal Engine 5</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Blueprints</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>RPA Development <span class="highlight swisscom-highlight">@Swisscom</span></h2>
+                    <div class="date">2023 - Present</div>
+                    <p>Automating business processes using UiPath RPA platform</p>
+                    <div class="skill-tags">
+                        <span class="tag">UiPath</span>
+                        <span class="tag">RPA</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+
+            <div class="section-title-container">
+                <h1 class="section-title">In Progress</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Frontend with React <span class="highlight">@Personal</span></h2>
+                    <div class="date">2024</div>
+                    <p>Building modern web applications with React and related technologies</p>
+                    <div class="skill-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Redux</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Python Machine Learning <span class="highlight">@Personal</span></h2>
+                    <div class="date">2024</div>
+                    <p>Exploring machine learning algorithms and data science with Python</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">ML</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>Java Mobile Apps <span class="highlight">@Personal</span></h2>
+                    <div class="date">2024</div>
+                    <p>Developing Android applications with Java and Android Studio</p>
+                    <div class="skill-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="about-container">
+                <div class="about-top-section">
+                    <div class="about-image-container">
+                        <div class="image-background"></div>
+                        <img src="/Images/Julian.jpg" alt="Julian Schwab" class="profile-image">
+                    </div>
+                    <div class="about-info">
+                        <div class="about-title">
+                            <h2 style="margin-top: 2rem;">Julian Schwab</h2>
+                            <p class="about-subtitle">Apprentice Software Developer</p>
+                            <p class="about-description">Over the past six years, I've been honing my skills in coding, specializing in HTML, CSS, JavaScript, and Python. As a 16-year-old apprentice at Swisscom, I'm excited to apply my knowledge in real-world projects and contribute to innovative solutions. I take pride in my ability to tackle challenges and learn continuously in the dynamic field of software development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Software Developer Apprenticeship</h3>
+                            <p>Application Developer at Swisscom, focusing on modern web technologies and automation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Secondary School Milchbuck</h3>
+                            <p>Continued education with focus on mathematics and technology</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2013 - 2019</div>
+                        <div class="timeline-content">
+                            <h3>Primary School Allenmoos</h3>
+                            <p>Started my educational journey at Allenmoos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="play" class="section">
+            <h1>Projects</h1>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-language="all">All</button>
+                <button class="filter-btn" data-language="html">HTML</button>
+                <button class="filter-btn" data-language="css">CSS</button>
+                <button class="filter-btn" data-language="javascript">JavaScript</button>
+                <button class="filter-btn" data-language="python">Python</button>
+                <button class="filter-btn" data-language="java">Java</button>
+                <button class="filter-btn" data-language="blueprints">UE5 Blueprints</button>
+            </div>
+
+            <div class="project-grid">
+                <div class="project-card" data-languages="html css javascript">
+                    <h2>Tic Tac Toe</h2>
+                    <p>Interactive two-player Tic Tac Toe game with modern design</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="html css javascript">
+                    <h2>Snake Game</h2>
+                    <p>Classic Snake game with modern controls and scoring system</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="html css">
+                    <h2>Photo Gallery</h2>
+                    <p>Responsive photo gallery with modern layout and animations</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="html css javascript">
+                    <h2>To-Do List</h2>
+                    <p>Task management application with local storage</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="html css javascript">
+                    <h2>Calculator</h2>
+                    <p>Interactive calculator with advanced operations</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="blueprints">
+                    <h2>Virtual Walk Through</h2>
+                    <p>Interactive 3D environment exploration experience</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">UE5</span>
+                        <span class="tag">Blueprints</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="blueprints">
+                    <h2>Aiming Game</h2>
+                    <p>First-person aiming training simulation</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">UE5</span>
+                        <span class="tag">Blueprints</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="python">
+                    <h2>Unit Converter</h2>
+                    <p>Multi-unit conversion tool with GUI interface</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Tkinter</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="java">
+                    <h2>Password Generator</h2>
+                    <p>Secure password generator with customization options</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaFX</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-languages="python">
+                    <h2>Tic Tac Toe Bot</h2>
+                    <p>AI-powered Tic Tac Toe opponent using minimax algorithm</p>
+                    <div class="project-links">
+                        <a href="#" class="demo-btn">Live Demo</a>
+                        <a href="#" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h1>Education</h1>
+            <div class="card">
+                <h2>Computer Science <span class="highlight">@Stanford</span></h2>
+                <div class="date">2015 - 2019</div>
+                <p>Focus on Software Engineering and AI</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="messenger-container">
+                <div class="messenger-box">
+                    <div class="messenger-header">
+                        <h2>Ask me anything</h2>
+                    </div>
+                    <div class="messenger-messages" id="messageArea">
+                        <div class="message bot">
+                            Hi! Choose a question below or type your own.
+                        </div>
+                    </div>
+                    <div class="preset-questions">
+                        <button class="preset-btn">What's your GitHub?</button>
+                        <button class="preset-btn">How can I contact you?</button>
+                        <button class="preset-btn">What are your main skills?</button>
+                    </div>
+                    <div class="messenger-input">
+                        <input type="text" placeholder="Type your question..." id="messageInput">
+                        <button id="sendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
