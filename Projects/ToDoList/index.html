@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Liste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meine Todo Liste</h1>
+        <div class="todo-form">
+            <div class="input-group">
+                <input type="text" id="todo-input" placeholder="Neue Aufgabe...">
+                <input type="time" id="todo-time">
+                <input type="text" id="todo-tags" placeholder="Tags (mit Komma trennen)">
+            </div>
+            <button class="add-btn">Hinzufügen</button>
+        </div>
+        <div class="filters">
+            <input type="text" id="tag-filter" placeholder="Nach Tags filtern">
+            <select id="time-filter">
+                <option value="all">Alle Zeiten</option>
+                <option value="today">Heute</option>
+                <option value="tomorrow">Morgen</option>
+                <option value="upcoming">Zukünftig</option>
+            </select>
+        </div>
+        <ul class="todo-list">
+            <div class="empty-state">
+                <p>Keine Todos vorhanden</p>
+                <p>Fügen Sie neue Aufgaben hinzu!</p>
+            </div>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

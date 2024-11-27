@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Resume</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😊</text></svg>">
+    <title>Hi. I'm Julian.</title>
     <script src="Lander.js"></script>
     <link rel="stylesheet" href="Lander.css">
 </head>
@@ -18,6 +19,7 @@
     </nav>
 
     <main>
+        <div class="scroll-indicator"></div>
         <section id="work" class="section active">
             <div class="title-container">
                 <h1 class="title">Hi. I'm Julian.<br>A Coder.</h1>
@@ -35,7 +37,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
             
@@ -50,7 +52,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
 
@@ -66,7 +68,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
 
@@ -82,7 +84,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
 
@@ -102,7 +104,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
 
@@ -118,7 +120,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
 
@@ -134,7 +136,7 @@
                     </div>
                 </div>
                 <div class="card-actions">
-                    <a href="/Projects/Projects.html" class="view-projects-btn">View Projects</a>
+                    <a href="#" class="view-projects-btn" data-section="play">View Projects</a>
                 </div>
             </div>
         </section>
@@ -191,17 +193,15 @@
                 <button class="filter-btn" data-language="css">CSS</button>
                 <button class="filter-btn" data-language="javascript">JavaScript</button>
                 <button class="filter-btn" data-language="python">Python</button>
-                <button class="filter-btn" data-language="java">Java</button>
-                <button class="filter-btn" data-language="blueprints">UE5 Blueprints</button>
             </div>
 
             <div class="project-grid">
                 <div class="project-card" data-languages="html css javascript">
                     <h2>Tic Tac Toe</h2>
-                    <p>Interactive two-player Tic Tac Toe game with modern design</p>
+                    <p>Two-player Tic Tac Toe game.</p>
                     <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
+                        <a href="/BewerbungsWebseite/Projects/TicTacToe/index.html" target="_blank" class="demo-btn">Live Demo</a>
+                        <a href="https://github.com/JulianSchwabCommits/TicTacToe" target="_blank"class="github-btn">GitHub</a>
                     </div>
                     <div class="skill-tags">
                         <span class="tag">HTML</span>
@@ -212,28 +212,15 @@
 
                 <div class="project-card" data-languages="html css javascript">
                     <h2>Snake Game</h2>
-                    <p>Classic Snake game with modern controls and scoring system</p>
+                    <p>Snake game with Score System</p>
                     <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
+                        <a href="/BewerbungsWebseite/Projects/Snake/index.html" target="_blank" class="demo-btn">Live Demo</a>
+                        <a href="https://github.com/JulianSchwabCommits/SimpleSnakeGame" target="_blank" class="github-btn">GitHub</a>
                     </div>
                     <div class="skill-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="project-card" data-languages="html css">
-                    <h2>Photo Gallery</h2>
-                    <p>Responsive photo gallery with modern layout and animations</p>
-                    <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
                     </div>
                 </div>
 
@@ -241,8 +228,8 @@
                     <h2>To-Do List</h2>
                     <p>Task management application with local storage</p>
                     <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
+                        <a href="/BewerbungsWebseite/Projects/ToDoList/index.html" target="_blank" class="demo-btn">Live Demo</a>
+                        <a href="https://github.com/JulianSchwabCommits/ToDoList" target="_blank" class="github-btn">GitHub</a>
                     </div>
                     <div class="skill-tags">
                         <span class="tag">HTML</span>
@@ -251,82 +238,45 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-languages="html css javascript">
+                <div class="project-card" data-languages="python">
                     <h2>Calculator</h2>
-                    <p>Interactive calculator with advanced operations</p>
+                    <p>Simple Calculator using Python and Pygame</p>
                     <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
+                        <a href="https://github.com/JulianSchwabCommits/PythonCalc" target="_blank" class="github-btn">GitHub</a>
                     </div>
                     <div class="skill-tags">
+                        <span class="tag">Pygame</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>  
+
+                <div class="project-card" data-languages="python html css">
+                    <h2>Unit Converter</h2>
+                    <p>I made a funny unit converter for Americans who don’t use meters or kilometers, using PyScript to write Python in HTML.</p>
+                    <div class="project-links">
+                        <a href="/BewerbungsWebseite/Projects/UnitConverter/index.html" target="_blank" class="demo-btn">Live Demo</a>
+                        <a href="https://github.com/JulianSchwabCommits/UnitConverter" target="_blank" class="github-btn">GitHub</a>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyScript</span>
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
                     </div>
                 </div>
 
-                <div class="project-card" data-languages="blueprints">
-                    <h2>Virtual Walk Through</h2>
-                    <p>Interactive 3D environment exploration experience</p>
-                    <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">UE5</span>
-                        <span class="tag">Blueprints</span>
-                    </div>
-                </div>
 
-                <div class="project-card" data-languages="blueprints">
-                    <h2>Aiming Game</h2>
-                    <p>First-person aiming training simulation</p>
-                    <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">UE5</span>
-                        <span class="tag">Blueprints</span>
-                    </div>
-                </div>
 
                 <div class="project-card" data-languages="python">
-                    <h2>Unit Converter</h2>
-                    <p>Multi-unit conversion tool with GUI interface</p>
+                    <h2>Music Taste Predictor</h2>
+                    <p>Machine Learning model using Scikit-learn to predict music preferences based on user data</p>
                     <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
+                        <a href="https://github.com/JulianSchwabCommits/PythonMusicSuggestionML" target="_blank" class="github-btn">GitHub</a>
                     </div>
                     <div class="skill-tags">
                         <span class="tag">Python</span>
-                        <span class="tag">Tkinter</span>
-                    </div>
-                </div>
-
-                <div class="project-card" data-languages="java">
-                    <h2>Password Generator</h2>
-                    <p>Secure password generator with customization options</p>
-                    <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">JavaFX</span>
-                    </div>
-                </div>
-
-                <div class="project-card" data-languages="python">
-                    <h2>Tic Tac Toe Bot</h2>
-                    <p>AI-powered Tic Tac Toe opponent using minimax algorithm</p>
-                    <div class="project-links">
-                        <a href="#" class="demo-btn">Live Demo</a>
-                        <a href="#" class="github-btn">GitHub</a>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">AI</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Machine Learning</span>
                     </div>
                 </div>
             </div>

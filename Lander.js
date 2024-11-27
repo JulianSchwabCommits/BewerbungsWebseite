@@ -12,14 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.getElementById(sectionId).classList.add('active');
-        document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+        document.querySelector(`.nav-link[data-section="${sectionId}"]`).classList.add('active');
     }
 
+    // Navigation Links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const sectionId = link.getAttribute('data-section');
             switchSection(sectionId);
+        });
+    });
+
+    // View Projects Buttons - Direkt nach der Navigation
+    const viewProjectsBtns = document.querySelectorAll('.view-projects-btn[data-section]');
+    viewProjectsBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = btn.getAttribute('data-section');
+            switchSection(sectionId);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     });
 
@@ -101,5 +116,85 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageInput.value = '';
             }
         }
+    });
+
+    // Custom Scrollbar Funktionalität
+    const main = document.querySelector('main');
+    const scrollbar = document.querySelector('.custom-scrollbar');
+    const scrollbarThumb = document.querySelector('.custom-scrollbar-thumb');
+    let isDragging = false;
+    let startY;
+    let scrollStartY;
+
+    // Scrollbar-Thumb-Größe aktualisieren
+    function updateScrollbarThumb() {
+        const scrollRatio = main.clientHeight / main.scrollHeight;
+        const thumbHeight = Math.max(scrollbar.clientHeight * scrollRatio, 40);
+        scrollbarThumb.style.height = `${thumbHeight}px`;
+    }
+
+    // Scrollbar-Thumb-Position aktualisieren
+    function updateThumbPosition() {
+        const scrollRatio = main.scrollTop / (main.scrollHeight - main.clientHeight);
+        const maxTop = scrollbar.clientHeight - scrollbarThumb.clientHeight;
+        const thumbTop = scrollRatio * maxTop;
+        scrollbarThumb.style.top = `${thumbTop}px`;
+    }
+
+    // Event Listeners für Scrollbar-Interaktionen
+    scrollbarThumb.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startY = e.clientY - scrollbarThumb.offsetTop;
+        scrollStartY = main.scrollTop;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const y = e.clientY - scrollbar.getBoundingClientRect().top;
+        const scrollRatio = y - startY;
+        const scrollbarHeight = scrollbar.clientHeight - scrollbarThumb.clientHeight;
+        const scrollContentHeight = main.scrollHeight - main.clientHeight;
+        
+        const newScrollTop = (scrollRatio / scrollbarHeight) * scrollContentHeight;
+        main.scrollTop = Math.max(0, Math.min(scrollContentHeight, newScrollTop));
+        
+        e.preventDefault();
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    main.addEventListener('scroll', () => {
+        updateThumbPosition();
+    });
+
+    window.addEventListener('resize', () => {
+        updateScrollbarThumb();
+        updateThumbPosition();
+    });
+
+    // Initiale Aktualisierung
+    updateScrollbarThumb();
+    updateThumbPosition();
+
+    // Scroll Indicator Logik
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > 100) {
+            scrollIndicator.classList.add('hidden');
+        } else {
+            scrollIndicator.classList.remove('hidden');
+        }
+    });
+
+    scrollIndicator.addEventListener('click', () => {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
     });
 });

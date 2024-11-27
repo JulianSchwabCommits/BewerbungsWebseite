@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <title>Einheitenumrechner</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Einheitenumrechner 🔄</h1>
+        
+        <div class="converter-box">
+            <div class="input-group">
+                <input type="number" id="input-value" placeholder="Wert eingeben">
+                <select id="input-unit">
+                    <option value="meter">Meter 📏</option>
+                    <option value="kilometer">Kilometer 🗺️</option>
+                    <option value="elefant">Elefant 🐘</option>
+                    <option value="feet">Fuß 👣</option>
+                    <option value="gold_nugget">Goldnugget 💎</option>
+                    <option value="american_eagle">Amerikanischer Adler 🦅</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Umrechnen in:</label>
+                <select id="output-unit">
+                    <option value="meter">Meter 📏</option>
+                    <option value="kilometer">Kilometer 🗺️</option>
+                    <option value="elefant">Elefant 🐘</option>
+                    <option value="feet">Fuß 👣</option>
+                    <option value="gold_nugget">Goldnugget 💎</option>
+                    <option value="american_eagle">Amerikanischer Adler 🦅</option>
+                </select>
+            </div>
+
+            <button id="convert-btn" py-click="calculate_conversion()">Umrechnen</button>
+            
+            <div id="result" class="result">
+                Ergebnis erscheint hier
+            </div>
+        </div>
+    </div>
+
+    <py-script>
+# Umrechnungsfunktionen direkt hier definiert
+def convert_distance(value, input_unit, output_unit):
+    # Umrechnungsfaktoren (basierend auf Meter)
+    conversion_factors = {
+        "meter": 1,
+        "kilometer": 1000,
+        "elefant": 6,  # Ein durchschnittlicher Elefant ist etwa 6 Meter lang
+        "feet": 0.3048,  # 1 Fuß = 0,3048 Meter
+        "gold_nugget": 0.02,  # Ein Goldnugget ist etwa 2cm lang
+        "american_eagle": 0.76  # Flügelspannweite eines Weißkopfseeadlers ≈ 76cm
+    }
+    
+    # Emoji-Zuordnung
+    unit_emojis = {
+        "meter": "📏",
+        "kilometer": "🗺️",
+        "elefant": "🐘",
+        "feet": "👣",
+        "gold_nugget": "💎",
+        "american_eagle": "🦅"
+    }
+    
+    # Umrechnung in Meter
+    meters = value * conversion_factors[input_unit]
+    
+    # Umrechnung in Zieleinheit
+    result = meters / conversion_factors[output_unit]
+    
+    return f"{result:.2f} {unit_emojis[output_unit]}"
+
+def calculate_conversion():
+    try:
+        value = float(Element('input-value').value)
+        input_unit = Element('input-unit').value
+        output_unit = Element('output-unit').value
+        
+        result = convert_distance(value, input_unit, output_unit)
+        Element('result').write(f"{value} {input_unit} = {result}")
+    except ValueError:
+        Element('result').write("❌ Fehler: Bitte geben Sie eine gültige Zahl ein!")
+    except Exception as e:
+        Element('result').write(f"❌ Fehler: {str(e)}")
+    </py-script>
+</body>
+</html>

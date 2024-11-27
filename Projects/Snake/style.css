@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0f7fa; 
+}
+
+canvas {
+    border: 2px solid #00796b;
+    background-color: #a5d6a7; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#score, #highscore {
+    font-size: 20px;
+    margin: 5px;
+    color: #004d40;
+    font-weight: bold;
+}
+
+#gameOver {
+    font-size: 30px;
+    color: #d32f2f;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#restartButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    background-color: #004d40;
+}
+    
