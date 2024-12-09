@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "What's your GitHub?": "Here's my GitHub profile: <a href='https://github.com/JulianSchwabCommits' target='_blank'>JulianSchwabCommits</a>",
         "How can I contact you?": "You can reach me via email at julian.schwab@swisscom.com",
         "What are your main skills?": "My main skills include JavaScript, Python, HTML/CSS, and I'm currently learning React and Machine Learning with Python.",
-        "Beta": "Here's the Beta of this Website <a href='/BewerbungsWebseite/Beta/index.html' target='_blank'>Beta</a>",
+        "Beta": "Here's the Beta of this Website <a href='/Portfolio/Beta/' target='_blank'>Beta</a>",
     };
 
     function addMessage(text, isUser = false) {
