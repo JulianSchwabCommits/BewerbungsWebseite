@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
-  
+
     function switchSection(sectionId) {
         sections.forEach(section => {
             section.classList.remove('active');
@@ -23,24 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
             switchSection(sectionId);
         });
     });
-    // Redirection on 5 clicks for Play link
-    document.addEventListener('DOMContentLoaded', () => {
-        const playLink = document.getElementById("play-link");
-        
-        if (playLink) { // Ensure the element exists
-            let playClickCount = 0;
-    
-            // Add event listener to the Play link
-            playLink.addEventListener('click', () => {
-                playClickCount++;
-                console.log(playClickCount);
-                if (playClickCount === 5) {
-                    window.location.href = "";
-                }
+
+    // View Projects Buttons - Direkt nach der Navigation
+    const viewProjectsBtns = document.querySelectorAll('.view-projects-btn[data-section]');
+    viewProjectsBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = btn.getAttribute('data-section');
+            switchSection(sectionId);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-        } else {
-            console.error("Element with id 'play-link' not found in the DOM.");
-        }
+        });
     });
 
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -80,8 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const responses = {
         "What's your GitHub?": "Here's my GitHub profile: <a href='https://github.com/JulianSchwabCommits' target='_blank'>JulianSchwabCommits</a>",
         "How can I contact you?": "You can reach me via email at julian.schwab@swisscom.com",
-        "What are your main skills?": "My main skills include JavaScript, Python, HTML/CSS, and I'm currently learning React and Machine Learning with Python.",
-        "Beta": "Here's the Beta of this Website <a href='/BewerbungsWebseite/Beta/index.html' target='_blank'>Beta</a>",
+        "What are your main skills?": "My main skills include JavaScript, Python, HTML/CSS, and I'm currently learning React and Machine Learning with Python."
     };
 
     function addMessage(text, isUser = false) {
