@@ -351,10 +351,11 @@ h1 {
     transition: all .4s ease;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     border: 1px solid rgba(59,130,246,.1);
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    align-items: center;
 }
 
 .project-card::before {
@@ -381,7 +382,7 @@ h1 {
 }
 
 .project-card h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #fff;
     position: relative;
     display: inline-block
@@ -397,7 +398,8 @@ h1 {
 .project-links {
     display: flex;
     gap: 1rem;
-    margin: 1.5rem 0
+    margin: 1.5rem 0;
+    justify-content: center;
 }
 
 .demo-btn,.github-btn {
@@ -471,7 +473,7 @@ h1 {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     padding: 1rem 0
 }
