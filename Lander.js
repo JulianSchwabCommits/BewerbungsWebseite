@@ -23,24 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
             switchSection(sectionId);
         });
     });
-    // Redirection on 5 clicks for Play link
-    document.addEventListener('DOMContentLoaded', () => {
-        const playLink = document.getElementById("play-link");
-        
-        if (playLink) { // Ensure the element exists
-            let playClickCount = 0;
-    
-            // Add event listener to the Play link
-            playLink.addEventListener('click', () => {
-                playClickCount++;
-                console.log(playClickCount);
-                if (playClickCount === 5) {
-                    window.location.href = "";
-                }
-            });
-        } else {
-            console.error("Element with id 'play-link' not found in the DOM.");
-        }
+
+    // Add event listeners for View Projects buttons
+    document.querySelectorAll('.view-projects-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = btn.getAttribute('data-section');
+            switchSection(sectionId);
+        });
     });
 
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -81,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "What's your GitHub?": "Here's my GitHub profile: <a href='https://github.com/JulianSchwabCommits' target='_blank'>JulianSchwabCommits</a>",
         "How can I contact you?": "You can reach me via email at julian.schwab@swisscom.com",
         "What are your main skills?": "My main skills include JavaScript, Python, HTML/CSS, and I'm currently learning React and Machine Learning with Python.",
-        "Beta": "Here's the Beta of this Website <a href='/Portfolio/Beta/' target='_blank'>Beta</a>",
     };
 
     function addMessage(text, isUser = false) {
@@ -128,62 +117,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const main = document.querySelector('main');
     const scrollbar = document.querySelector('.custom-scrollbar');
     const scrollbarThumb = document.querySelector('.custom-scrollbar-thumb');
-    let isDragging = false;
-    let startY;
-    let scrollStartY;
+    
+    // Only initialize scrollbar functionality if elements exist
+    if (main && scrollbar && scrollbarThumb) {
+        let isDragging = false;
+        let startY;
+        let scrollStartY;
 
-    // Scrollbar-Thumb-Größe aktualisieren
-    function updateScrollbarThumb() {
-        const scrollRatio = main.clientHeight / main.scrollHeight;
-        const thumbHeight = Math.max(scrollbar.clientHeight * scrollRatio, 40);
-        scrollbarThumb.style.height = `${thumbHeight}px`;
-    }
+        // Scrollbar-Thumb-Größe aktualisieren
+        function updateScrollbarThumb() {
+            const scrollRatio = main.clientHeight / main.scrollHeight;
+            const thumbHeight = Math.max(scrollbar.clientHeight * scrollRatio, 40);
+            scrollbarThumb.style.height = `${thumbHeight}px`;
+        }
 
-    // Scrollbar-Thumb-Position aktualisieren
-    function updateThumbPosition() {
-        const scrollRatio = main.scrollTop / (main.scrollHeight - main.clientHeight);
-        const maxTop = scrollbar.clientHeight - scrollbarThumb.clientHeight;
-        const thumbTop = scrollRatio * maxTop;
-        scrollbarThumb.style.top = `${thumbTop}px`;
-    }
+        // Scrollbar-Thumb-Position aktualisieren
+        function updateThumbPosition() {
+            const scrollRatio = main.scrollTop / (main.scrollHeight - main.clientHeight);
+            const maxTop = scrollbar.clientHeight - scrollbarThumb.clientHeight;
+            const thumbTop = scrollRatio * maxTop;
+            scrollbarThumb.style.top = `${thumbTop}px`;
+        }
 
-    // Event Listeners für Scrollbar-Interaktionen
-    scrollbarThumb.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startY = e.clientY - scrollbarThumb.offsetTop;
-        scrollStartY = main.scrollTop;
-    });
+        // Event Listeners für Scrollbar-Interaktionen
+        scrollbarThumb.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startY = e.clientY - scrollbarThumb.offsetTop;
+            scrollStartY = main.scrollTop;
+        });
 
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        
-        const y = e.clientY - scrollbar.getBoundingClientRect().top;
-        const scrollRatio = y - startY;
-        const scrollbarHeight = scrollbar.clientHeight - scrollbarThumb.clientHeight;
-        const scrollContentHeight = main.scrollHeight - main.clientHeight;
-        
-        const newScrollTop = (scrollRatio / scrollbarHeight) * scrollContentHeight;
-        main.scrollTop = Math.max(0, Math.min(scrollContentHeight, newScrollTop));
-        
-        e.preventDefault();
-    });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const y = e.clientY - scrollbar.getBoundingClientRect().top;
+            const scrollRatio = y - startY;
+            const scrollbarHeight = scrollbar.clientHeight - scrollbarThumb.clientHeight;
+            const scrollContentHeight = main.scrollHeight - main.clientHeight;
+            
+            const newScrollTop = (scrollRatio / scrollbarHeight) * scrollContentHeight;
+            main.scrollTop = Math.max(0, Math.min(scrollContentHeight, newScrollTop));
+            
+            e.preventDefault();
+        });
 
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
 
-    main.addEventListener('scroll', () => {
-        updateThumbPosition();
-    });
+        main.addEventListener('scroll', () => {
+            updateThumbPosition();
+        });
 
-    window.addEventListener('resize', () => {
+        window.addEventListener('resize', () => {
+            updateScrollbarThumb();
+            updateThumbPosition();
+        });
+
+        // Initiale Aktualisierung
         updateScrollbarThumb();
         updateThumbPosition();
-    });
-
-    // Initiale Aktualisierung
-    updateScrollbarThumb();
-    updateThumbPosition();
+    }
 
     // Scroll Indicator Logik
     const scrollIndicator = document.querySelector('.scroll-indicator');
